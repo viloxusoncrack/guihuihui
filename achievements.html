@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vilo's Achievements</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+		body {
+			font-family: 'Orbitron', sans-serif;
+			background-color: #0a0a0a;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			text-align: center;
+			color: #fff;
+			overflow: hidden;
+		}
+
+		.container {
+			background-color: rgba(20, 20, 20, 0.9);
+			padding: 3rem;
+			border-radius: 15px;
+			border: 2px solid #8a2be2;
+			box-shadow: 0 0 20px #8a2be2, 
+					   inset 0 0 20px #8a2be2;
+			max-width: 800px;
+			width: 90%;
+			position: relative;
+			animation: pulse 2s infinite;
+		}
+
+		@keyframes pulse {
+			0% { box-shadow: 0 0 20px #8a2be2, inset 0 0 20px #8a2be2; }
+			50% { box-shadow: 0 0 40px #8a2be2, inset 0 0 40px #8a2be2; }
+			100% { box-shadow: 0 0 20px #8a2be2, inset 0 0 20px #8a2be2; }
+		}
+
+		h1 {
+			color: #fff;
+			margin-bottom: 2rem;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+			text-shadow: 0 0 10px #8a2be2,
+						 0 0 20px #8a2be2,
+						 0 0 30px #8a2be2;
+			animation: glow 1.5s ease-in-out infinite alternate;
+		}
+
+		.achievement-card {
+			background-color: rgba(138, 43, 226, 0.1);
+			border: 1px solid #8a2be2;
+			border-radius: 10px;
+			padding: 1.5rem;
+			margin: 1rem 0;
+			text-align: left;
+			transition: all 0.3s ease;
+		}
+
+		.achievement-card:hover {
+			background-color: rgba(138, 43, 226, 0.2);
+			transform: translateX(10px);
+		}
+
+		.achievement-title {
+			font-size: 1.2rem;
+			color: #fff;
+			margin-bottom: 0.5rem;
+		}
+
+		.back-button {
+			display: inline-block;
+			margin-top: 2rem;
+			padding: 1rem 2rem;
+			font-size: 1.2rem;
+			color: #fff;
+			background-color: rgba(138, 43, 226, 0.2);
+			border: 2px solid #8a2be2;
+			border-radius: 25px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			text-decoration: none;
+		}
+
+		.back-button:hover {
+			background-color: rgba(138, 43, 226, 0.4);
+			box-shadow: 0 0 20px #8a2be2;
+			transform: translateY(-3px);
+		}
+
+		.background-effects {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+			background: radial-gradient(circle at 50% 50%, 
+									  rgba(138, 43, 226, 0.1) 0%, 
+									  rgba(0, 0, 0, 0.9) 100%);
+			z-index: -1;
+		}
+	</style>
+</head>
+<body>
+	<div class="background-effects"></div>
+	<div class="container">
+		<h1>My Achievements</h1>
+		
+		<div class="achievement-card">
+			<div class="achievement-title">🔓 TikTok Security Research</div>
+			Found a username exploit in TikTok enabling the claim of any username
+		</div>
+
+		<div class="achievement-card">
+			<div class="achievement-title">🤖 Crypto Tracking Bots</div>
+			Developed Telegram crypto tracking bots for multiple popular coins:<br>
+			• $slum<br>
+			• $wanted<br>
+			• $ppap
+		</div>
+
+		<a href="index.html" class="back-button">← Back to Home</a>
+	</div>
+</body>

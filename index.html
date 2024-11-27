@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vilo's Links</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0a0a0a;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .container {
+            background-color: rgba(20, 20, 20, 0.9);
+            padding: 3rem;
+            border-radius: 15px;
+            border: 2px solid #8a2be2;
+            box-shadow: 0 0 20px #8a2be2, 
+                       inset 0 0 20px #8a2be2;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 20px #8a2be2, inset 0 0 20px #8a2be2; }
+            50% { box-shadow: 0 0 40px #8a2be2, inset 0 0 40px #8a2be2; }
+            100% { box-shadow: 0 0 20px #8a2be2, inset 0 0 20px #8a2be2; }
+        }
+
+        h1 {
+            color: #fff;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px #8a2be2,
+                         0 0 20px #8a2be2,
+                         0 0 30px #8a2be2;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2, 0 0 30px #8a2be2; }
+            to { text-shadow: 0 0 20px #8a2be2, 0 0 30px #8a2be2, 0 0 40px #8a2be2; }
+        }
+
+        .message {
+            font-size: 1.4rem;
+            color: #fff;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background-color: rgba(138, 43, 226, 0.2);
+            border-radius: 10px;
+            border: 1px solid #8a2be2;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bio-info {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            margin: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid #8a2be2;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background-color: rgba(138, 43, 226, 0.1);
+        }
+
+        .social-links a:hover {
+            background-color: rgba(138, 43, 226, 0.3);
+            box-shadow: 0 0 15px #8a2be2;
+            transform: translateY(-2px);
+        }
+
+        .message::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(138, 43, 226, 0.1),
+                transparent
+            );
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .portfolio-button {
+            display: block;
+            margin: 2rem auto 0;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: rgba(138, 43, 226, 0.2);
+            border: 2px solid #8a2be2;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .portfolio-button:hover {
+            background-color: rgba(138, 43, 226, 0.4);
+            box-shadow: 0 0 20px #8a2be2;
+            transform: translateY(-3px);
+        }
+
+        .background-effects {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: radial-gradient(circle at 50% 50%, 
+                                      rgba(138, 43, 226, 0.1) 0%, 
+                                      rgba(0, 0, 0, 0.9) 100%);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-effects"></div>
+    <div class="container">
+        <h1>Welcome to Vilo's Page</h1>
+        <div class="message">
+            <div class="bio-info">
+                👋 Hey, I'm Vilo!<br>
+                🌟 16-year-old Developer<br>
+                🌎 Based in the United States<br>
+                💻 Passionate about coding and technology
+            </div>
+            <div class="social-links">
+                <a href="https://t.me/jaquaim" target="_blank">Telegram: @jaquaim</a>
+                <a href="https://x.com/ss_swatable" target="_blank">Twitter: @ss_swatable</a>
+            </div>
+            <a href="achievements.html" class="portfolio-button">View My Achievements ✨</a>
+        </div>
+    </div>
+</body>
+</html>
