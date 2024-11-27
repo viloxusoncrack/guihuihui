@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vilo's Links</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0a0a0a;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Add floating particles */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(138, 43, 226, 0.2) 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, rgba(138, 43, 226, 0.2) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: floatingParticles 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes floatingParticles {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50px); }
+        }
+
+        .container {
+            background-color: rgba(20, 20, 20, 0.9);
+            padding: 3rem;
+            border-radius: 15px;
+            border: 2px solid #8a2be2;
+            box-shadow: 0 0 20px #8a2be2, 
+                       inset 0 0 20px #8a2be2;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            animation: pulse 2s infinite;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Enhanced container hover effect */
+        .container:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 20px #8a2be2, inset 0 0 20px #8a2be2; }
+            50% { box-shadow: 0 0 40px #8a2be2, inset 0 0 40px #8a2be2; }
+            100% { box-shadow: 0 0 20px #8a2be2, inset 0 0 20px #8a2be2; }
+        }
+
+        h1 {
+            color: #fff;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px #8a2be2,
+                         0 0 20px #8a2be2,
+                         0 0 30px #8a2be2;
+            animation: glow 1.5s ease-in-out infinite alternate;
+            position: relative;
+        }
+
+        /* Add cyberpunk glitch effect */
+        h1::before, h1::after {
+            content: attr(data-text);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0.8;
+        }
+
+        h1::before {
+            animation: glitch-1 2s infinite;
+            color: #ff00ff;
+            clip: rect(44px, 450px, 56px, 0);
+        }
+
+        h1::after {
+            animation: glitch-2 2s infinite;
+            color: #00ffff;
+            clip: rect(44px, 450px, 56px, 0);
+        }
+
+        @keyframes glitch-1 {
+            0% { transform: translateX(0); }
+            30% { transform: translateX(-5px); }
+            60% { transform: translateX(5px); }
+            100% { transform: translateX(0); }
+        }
+
+        @keyframes glitch-2 {
+            0% { transform: translateX(0); }
+            30% { transform: translateX(5px); }
+            60% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+        .message {
+            font-size: 1.4rem;
+            color: #fff;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background-color: rgba(138, 43, 226, 0.2);
+            border-radius: 10px;
+            border: 1px solid #8a2be2;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Add energy field effect to message */
+        .message::before {
+            content: '';
+            position: absolute;
+            top: -150%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(138, 43, 226, 0.1),
+                transparent
+            );
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .bio-info {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            text-align: left;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid #8a2be2;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background-color: rgba(138, 43, 226, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Add ripple effect to social links */
+        .social-links a::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.4) 0%, transparent 50%);
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s;
+        }
+
+        .social-links a:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .portfolio-button {
+            display: block;
+            margin: 2rem auto 0;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: rgba(138, 43, 226, 0.2);
+            border: 2px solid #8a2be2;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Fire effect */
+        .portfolio-button::before,
+        .portfolio-button::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 50%;
+            background-image: 
+                radial-gradient(ellipse at 50% 150%, #8a2be2 0%, transparent 70%);
+            filter: blur(5px);
+            animation: fire 2s infinite;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .portfolio-button::after {
+            animation: fire 3s infinite 0.5s;
+            opacity: 0.5;
+        }
+
+        @keyframes fire {
+            0%, 100% {
+                transform: translateY(0) scaleX(1);
+            }
+            50% {
+                transform: translateY(-20%) scaleX(0.95);
+            }
+        }
+
+        .portfolio-button:hover::before,
+        .portfolio-button:hover::after {
+            height: 70%;
+            animation-duration: 1s;
+        }
+
+        .background-effects {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: radial-gradient(circle at 50% 50%, 
+                                      rgba(138, 43, 226, 0.1) 0%, 
+                                      rgba(0, 0, 0, 0.9) 100%);
+            z-index: -1;
+            animation: pulseBackground 4s ease-in-out infinite;
+        }
+
+        @keyframes pulseBackground {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        /* Add theme switcher styles */
+        .theme-switcher {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .theme-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .theme-btn:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 20px currentColor;
+        }
+
+        #red-theme {
+            background-color: #ff0000;
+            border-color: #ff0000;
+        }
+
+        #blue-theme {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        #green-theme {
+            background-color: #00ff00;
+            border-color: #00ff00;
+        }
+
+        #purple-theme {
+            background-color: #8a2be2;
+            border-color: #8a2be2;
+        }
+
+        /* Add theme transition to all colored elements */
+        .container,
+        .message,
+        .social-links a,
+        .portfolio-button,
+        h1,
+        .background-effects {
+            transition: all 0.3s ease;
+        }
+    </style>
+    <script>
+        function changeTheme(color) {
+            const root = document.documentElement;
+            const elements = {
+                container: {
+                    border: `2px solid ${color}`,
+                    boxShadow: `0 0 20px ${color}, inset 0 0 20px ${color}`
+                },
+                heading: {
+                    textShadow: `0 0 10px ${color}, 0 0 20px ${color}, 0 0 30px ${color}`
+                },
+                message: {
+                    borderColor: color,
+                    backgroundColor: `${color}33`
+                },
+                links: {
+                    borderColor: color,
+                    backgroundColor: `${color}1a`
+                },
+                background: {
+                    background: `radial-gradient(circle at 50% 50%, ${color}1a 0%, rgba(0, 0, 0, 0.9) 100%)`
+                }
+            };
+
+            // Update container
+            const container = document.querySelector('.container');
+            container.style.borderColor = color;
+            container.style.boxShadow = elements.container.boxShadow;
+
+            // Update heading
+            const heading = document.querySelector('h1');
+            heading.style.textShadow = elements.heading.textShadow;
+
+            // Update message
+            const message = document.querySelector('.message');
+            message.style.borderColor = color;
+            message.style.backgroundColor = elements.message.backgroundColor;
+
+            // Update links and portfolio button
+            const links = document.querySelectorAll('.social-links a, .portfolio-button');
+            links.forEach(link => {
+                link.style.borderColor = color;
+                link.style.backgroundColor = elements.links.backgroundColor;
+            });
+
+            // Update background effects
+            const bgEffects = document.querySelector('.background-effects');
+            bgEffects.style.background = elements.background.background;
+
+            // Update all animations and glowing effects
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes pulse {
+                    0% { box-shadow: 0 0 20px ${color}, inset 0 0 20px ${color}; }
+                    50% { box-shadow: 0 0 40px ${color}, inset 0 0 40px ${color}; }
+                    100% { box-shadow: 0 0 20px ${color}, inset 0 0 20px ${color}; }
+                }
+                @keyframes glow {
+                    from { text-shadow: 0 0 10px ${color}, 0 0 20px ${color}, 0 0 30px ${color}; }
+                    to { text-shadow: 0 0 20px ${color}, 0 0 30px ${color}, 0 0 40px ${color}; }
+                }
+                body::before {
+                    background-image: 
+                        radial-gradient(circle at 25% 25%, ${color}33 1px, transparent 1px),
+                        radial-gradient(circle at 75% 75%, ${color}33 1px, transparent 1px) !important;
+                }
+                .social-links a:hover {
+                    background-color: ${color}33 !important;
+                    box-shadow: 0 0 15px ${color} !important;
+                }
+                .message::before {
+                    background: linear-gradient(45deg, transparent, ${color}1a, transparent) !important;
+                }
+                .portfolio-button::before,
+                .portfolio-button::after {
+                    background-image: radial-gradient(ellipse at 50% 150%, ${color} 0%, transparent 70%) !important;
+                }
+                
+                .portfolio-button:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 0 20px ${color};
+                    background-color: ${color}33;
+                }
+
+                h1::before, h1::after { color: ${color}; }
+
+                .portfolio-button::before,
+                .portfolio-button::after {
+                    height: 70%;
+                    animation-duration: 1s;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+    </script>
+</head>
+<body>
+    <div class="background-effects"></div>
+    <div class="container">
+        <h1 data-text="Welcome to Vilo's Page">Welcome to Vilo's Page</h1>
+        <div class="message">
+            <div class="bio-info">
+                👋 Hey, I'm Vilo!<br>
+                🌟 16-year-old Developer<br>
+                🌎 Based in the United States<br>
+                💻 Passionate about coding and technology
+            </div>
+            <div class="social-links">
+                <a href="https://t.me/jaquaim" target="_blank">Telegram: @jaquaim</a>
+                <a href="https://x.com/" target="_blank">Twitter: SOON</a>
+            </div>
+            <a href="achievements.html" class="portfolio-button">View My Achievements ✨</a>
+        </div>
+    </div>
+    <div class="theme-switcher">
+        <button class="theme-btn" id="red-theme" onclick="changeTheme('#ff0000')" title="Red Theme"></button>
+        <button class="theme-btn" id="blue-theme" onclick="changeTheme('#007bff')" title="Blue Theme"></button>
+        <button class="theme-btn" id="green-theme" onclick="changeTheme('#00ff00')" title="Green Theme"></button>
+        <button class="theme-btn" id="purple-theme" onclick="changeTheme('#8a2be2')" title="Purple Theme"></button>
+    </div>
+</body>
+</html>
